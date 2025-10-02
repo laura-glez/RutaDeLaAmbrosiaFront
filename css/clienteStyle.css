@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    color: #2e2e2e;
+    background-color: #F9F4EF;
+    line-height: 1.6;
+    font-family: "cinzel";
+    }
+  
+  
+header {
+    background: #750f3b;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  header .logo {
+    font-weight: 800;
+    font-size: 24px;
+    color: #111;
+  }
+  
+  header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  
+  .nav1 ul {
+    list-style: none;
+  
+    background:#750f3b;
+  
+  }
+  
+  .nav1 ul:before,
+  .nav1 ul:after {
+    content: "";
+    display: table;
+  }
+  .nav1 ul:after {
+    clear: both;
+  }
+  
+  .nav1 ul > li {
+    float: left;
+    position: relative;
+  }
+  
+  .nav1 a {
+    display: block;
+    padding: 10px 17px;
+    line-height: 1.2em;
+    color:  #F9F4EF;
+    transition: color 0.7s ;
+  }
+  
+  .nav1 a:hover {
+    text-decoration: none;
+    color:rgb(241, 208, 145);
+  }
+  
+  .nav1 li ul {
+    position: absolute;
+    left: -9999em;
+    top: 36px;
+    z-index: 1;
+    background: wheat;
+  }
+  
+  .nav1 li ul li {
+    width: 100%;
+  }
+  
+  .nav1 ul > li:hover ul {
+    left: 0;
+  }
+  
+  .nav1 li ul a {
+    border: none;
+  }
+  
+  .nav1 li ul a:hover {
+    background: rgba(0, 0, 0, 0.097);
+  }
+  /* Todas las reseñas de la pagina */
+
+.container {
+  position: relative;
+  top: 180px;
+  padding: 16px; 
+  display: grid;
+  gap: 16px; 
+  grid-template-columns: repeat(5, 270px);
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+}
+
+
+.flat {
+  box-shadow: none !important;
+}
+
+
+.card {
+  overflow: hidden;
+  color: lightgray; 
+  font-size: 18px;
+  height: 245px; 
+  border: 1px solid darkgray; 
+  transition: all 1.3s cubic-bezier(1, 0, 0, 1);
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.8s;
+}
+
+
+.card:hover {
+  box-shadow: 0 1px 26px lightgray; 
+}
+
+
+.card-Cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;     
+  padding: 1.5rem; 
+}
+
+
+.card-Titulo {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  text-shadow:rgb(0, 0, 0)x 0 #000000;
+}
+
+
+.card-descripcion {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;   
+  height: 100%;
+  padding: 0;      
+  box-sizing: border-box;
+}
+
+
+.subContenedor {
+  margin: 0;
+  min-height: 1.5em;
+  font-size: 25px;
+}
+
+
+.total-card {
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 60vw !important;
+  height: 70vh !important;
+  font-size: 26px;
+  box-shadow: 0 1px 26px lightgray; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+  z-index: 999;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 54px;
+  color: whitesmoke; 
+  cursor: pointer;
+  z-index: 1000;
+  transition: color 0.5s ease; 
+}
+
+
+.close-button:hover {
+  color: #750f3b;
+}
+
+
+.total-card .card-descripcion {
+  display: flex;
+}
+
+
+.btn-todas-Reseñas {
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 1.5rem;      
+  align-self: center;       
+  padding: 1rem 2rem;       
+  font-size: 1rem;            
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 4px;         
+  transition: transform 0.2s;
+}
+
+
+.btn-todas-Reseñas:hover {
+  transform: scale(1.05);
+}
+
+
+.total-card .btn-todas-Reseñas {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+h1{
+    color: #111;
+    position:relative;
+    top:250px;
+    left:750px;
+}

@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    color: #2e2e2e;
+    background-color: #F9F4EF;
+    line-height: 1.6;
+    font-family: "cinzel";
+  }
+  
+  
+header {
+    background: #750f3b;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  header .logo {
+    font-weight: 800;
+    font-size: 24px;
+    color: #111;
+  }
+  
+  header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  
+  .nav1 ul {
+
+    list-style: none;
+  
+    background:#750f3b;
+  
+  }
+  
+  .nav1 ul:before,
+  .nav1 ul:after {
+    content: "";
+    display: table;
+  }
+  .nav1 ul:after {
+    clear: both;
+  }
+  
+  .nav1 ul > li {
+    float: left;
+    position: relative;
+  }
+  
+  .nav1 a {
+    font-family: 'cinzel';
+    display: block;
+    padding: 10px 17px;
+    line-height: 1.2em;
+    color:  #F9F4EF;
+    transition: color 0.7s ;
+  }
+  
+  .nav1 a:hover {
+    text-decoration: none;
+    color:rgb(241, 208, 145);
+  }
+  
+  .nav1 li ul {
+    position: absolute;
+    left: -9999em;
+    top: 36px;
+    z-index: 1;
+    background: wheat;
+  }
+  
+  .nav1 li ul li {
+    width: 100%;
+  }
+  
+  .nav1 ul > li:hover ul {
+    left: 0;
+  }
+  
+  .nav1 li ul a {
+    border: none;
+  }
+  
+  .nav1 li ul a:hover {
+    background: rgba(0, 0, 0, 0.097);
+  }
+  .container {
+    padding: 16px; 
+    display: grid;
+    gap: 16px; 
+    grid-template-columns: repeat(5, 270px);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+  }
+  
+  
+  .flat {
+    box-shadow: none !important;
+  }
+  
+  body {
+    margin: 0;
+    background: white; 
+    font-family: sans-serif;
+}
+
+#tablaCliente{
+position:relative ;
+top: 200px;
+justify-content: space-between;
+gap: 1rem;
+border-color: #111;
+
+}
+
+#tablaUsuarioContainer {
+  position: relative;
+  top: 140px;
+  left: 715px;
+  width: 600px;
+  padding: 20px;
+  font-size: 30px;
+  
+}
+
+#tablaUsuarioContainer h2{
+  font-family: "Playfair Display";
+
+}
+#tablaUsuarioContainer p{
+  font-family: "Source Sans 3" ;
+}

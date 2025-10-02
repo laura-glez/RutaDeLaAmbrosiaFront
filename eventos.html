@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard Administrador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/eventStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+    </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href='eventos.html'><img id="RA"src="img/Practicas-Definitivo.png" alt="logoRA"width="70" height="70"></a></div >
+    <nav class="nav nav1">
+    <ul>
+
+      <li ><a id="cerrarSesion">Cerrar Sesión</a></li>
+  </ul>
+  </nav>
+  </header>
+<br>
+<br>
+<br>
+<br>
+  <div id="contenedor">
+
+    <h1>Administración de los Eventos</h1>
+    <br>
+    <h2>Nuevo evento</h2>
+    <h2 id="altaEvento"><img id="imagen" src="img/icons8-más-48.png" alt="icono" width="30" height="30"></h2>
+
+    <table id="tabla">
+        <thead>
+                <tr>
+                  <th>id</th>
+                  <th>nombre</th>  
+                  <th>estado</th>
+                  <th>aforo</th>
+                  <th>Ver</th> 
+                  <th>Modificar</th> 
+                  <th>Eliminar</th> 
+                  <th>Reservas</th>
+                </tr>
+              </thead>
+        <tbody>
+        </tbody>
+    </table>
+      
+  
+
+  <!-- Botón para abrir el pop-up -->
+  <!-- <button id="abrirPopup">Abrir pop-up</button> -->
+
+ <!-- Fondo oscuro desenfocado para el modal -->
+ <div id="popup-overlay" style="display: none;"></div>
+ <!-- Contenedor del pop-up (formulario) -->
+ <div id="popupD">
+   <button id="cerrarPopupD">&times;</button>
+   <div id="popup-contentD"></div>
+  </div>
+     <!-- Aquí se incluye el formulario para dar de alta el evento -->
+  <div id="popupA">
+  <button id="cerrarPopupA">&times;</button>
+    <div id="popup-Altacontent">
+      <h2>Alta de Evento</h2>
+      <form id="formAltaEvento" >
+        <div class="bloque">
+          <label for="nombre">Nombre:</label>
+          <input type="text" placeholder="Nombre del evento" id="nombre" required>
+       </div>
+       <div class="bloque">
+          <label for="descripcion">Descripción:</label>
+          <input type="text" id="descripcion" required placeholder="Descripcion del evento">
+      </div>
+      <div class="bloque">
+          <label for="fechaInicio">Fecha Inicio:</label>
+          <input type="date" id="fechaInicio" required>
+      </div>
+      <div class="bloque">
+          <label for="duracion">Duración:</label>
+          <input type="number" id="duracion" required placeholder="Duración">
+      </div>
+      <div class="bloque">
+        <label for="unidadDuracion">Unidad de duración:</label>
+        <select id="unidadDuracion">
+          <option value="HORAS">Horas</option>
+          <option value="DIAS">Días</option>
+        </select>
+      </div>
+      <div class="bloque">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" required placeholder="Dirección">
+      </div>
+      <div class="bloque">
+        <label for="aforo">Aforo:</label>
+        <input type="number" id="aforo" required min="1" max="30" placeholder="Aforo máximo">
+      </div>
+      <div class="bloque">
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" required min="15" placeholder="Precio por persona">
+      </div>
+      <div class="bloque">
+        <label for="idTipo">Tipo:</label>
+        <select id="idTipo">
+          <option value="1">Vino</option>
+          <option value="2">Cerveza</option>
+          <option value="3">Cóctel</option>
+        </select>
+      </div>
+      <div class="bloque">
+        <label for="destacado">Destacado:</label>
+        <select id="destacado">
+          <option value="S">Si</option>
+          <option value="N">No</option>
+        </select>
+     </div>
+     <div class="bloque">
+       <button type="submit">Guardar Cambios</button>
+     </div>
+     </form>
+    </div>
+  </div>
+
+   <div id="popupM">
+   <button id="cerrarPopupM">&times;</button>
+    <div id="popup-Modificarcontent">
+      
+     <form id="formModificarEvento" >
+      <div class="bloque">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="MODnombre" required>
+      </div>
+
+      <div class="bloque">
+        <label for="descripcion">Descripcion:</label>
+        <input type="text" id="MODdescripcion" required>
+      </div>
+      <div class="bloque">
+        <label for="fechaInicio">Fecha Inicio:</label>
+        <input type="date" id="MODfechaInicio" required>
+      </div>
+
+      <div class="bloque">
+        <label for="unidadDuracion">Unidad de duracion:</label>
+        <select id="MODunidadDuracion"required>
+          <option value="HORAS">Horas</option>
+          <option value="DIAS">Dias</option>
+        </select>
+      </div>
+
+      <div class="bloque">
+        <label for="duracion">Duracion:</label>
+        <input type="number" id="MODduracion" required>
+      </div>
+      <div class="bloque">
+        <label for="estado">Estado:</label>
+        <select id="MODestado"required>
+          <option value="ACTIVO">ACTIVO</option>
+          <option value="TERMINADO">TERMINADO</option>
+          <option value="CANCELADO">CANCELADO</option>
+        </select> 
+      </div>
+
+      <div class="bloque">
+        <label for="direccion">Direccion:</label>
+        <input type="text" id="MODdireccion" required>
+      </div>
+
+      <div class="bloque">
+        <label for="aforo">Aforo:</label>
+        <input type="number" id="MODaforo" required min="1" max="30">
+      </div>
+
+      <div class="bloque">
+        <label for="precio">Precio:</label>
+        <input type="number" id="MODprecio" required min="15">
+      </div>
+
+      <div class="bloque">
+        <label for="idTipo">Id Tipo:</label>
+        <select id="MODidTipo"required>
+          <option value="1">Vino</option>
+          <option value="2">Cerveza</option>
+          <option value="3">Cóctel</option></select>
+      </div>
+
+      <div class="bloque">
+        <button type="submit">Guardar Cambios</button>
+      </div>
+      </form>
+    </div>
+    </div>
+
+  <div id="popupR">
+    <button id="cerrarPopupR">&times;</button>
+    <div id="popup-contentR"></div>
+  </div>
+
+  <script src="scripts/eventos.js"></script>
+</body>
+</html>

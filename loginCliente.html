@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Clientes</title>
+    <link href="css/clienteStyle.css" rel="stylesheet">
+    <link href="css/styleDePrueba.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="img/Practicas-Definitivo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="logo"><a href='loginCliente.html'><img id="RA"src="img/Practicas-Definitivo.png" alt="logoRA"width="70" height="70"></a></div >
+        <nav class="nav nav1">
+            <ul>
+              <li><a href='DatosCliente.html'>Mis Datos</a></li>
+              <li><a href="MisReservas.html">Mis Reservas</a></li>
+              <li><a id="cerrarSesion">Cerrar Sesión</a></li>  
+            </ul>
+          </nav>
+
+              
+    </header>
+    <h1>Eventos Activos y Destacados</h1>
+    <section class="Espacio-Contenedores-2">
+      <h2 class="diferenciar">Todas Posibilidades de Reservas</h2>
+      
+      <section class="container" id="container-card" >
+          <div class="card" role="button" id="A1">
+              <div class="card-Cuerpo">
+                  <h3 class="card-Titulo">Título de la tarjeta</h3>
+                  <div class="card-descripcion">
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <button class="btn-todas-Reseñas" destino="MisReservas.html" >Reservar Ahora</button>
+                  </div>
+              </div>
+          </div>
+
+
+          <div class="card" role="button" id="A2">
+              <div class="card-Cuerpo">
+                  <h3 class="card-Titulo">Tarjeta con texto</h3>
+                  <div class="card-descripcion">
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <div class="subContenedor"></div>
+                      <button class="btn-todas-Reseñas" dirreccion-para-todas-reservas="SendaDionisio.html" >Reservar Ahora</button>
+                  </div>
+              </div>
+          </div>
+
+
+      </section>
+  </section>
+    <script src="scripts/cliente.js"></script>
+    <script src="scripts/destacados.js"></script>
+</body>
+</html>

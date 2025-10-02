@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reserva Directa</title>
+    <link href="css/datosClienteStyle.css" rel="stylesheet">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+        #formularioreserva {
+            position: relative;
+            left: 750px;
+            top:180px;
+            display: block; /* Ahora está visible desde el inicio */
+            font-family: "Source Sans 3" ;
+            background:#F9F4EF ;
+            color:#750f3b;
+            width: 500px;
+            border: 1px solid #ccc;
+        }
+        #detalleEvento h2{
+            font-family: "Playfair Display";
+        }
+        #detalleEvento p{
+            font-family: "Source Sans 3" ;
+        }
+        #detalleEvento {
+            width: 500px;
+            left: 750px;
+            position: relative;
+            top: 180px;
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            background:#F9F4EF ;
+            color:#750f3b;
+            
+        }
+
+        #reservarEvento{
+            font-family: "Source Sans 3" ;
+            background:#750f3b;
+            color:#F9F4EF ;
+            position: relative;
+            left: 200px;
+            
+            
+        }
+        #reserva{
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body> 
+    <header>
+        
+        <div class="logo"><a href='loginCliente.html'></a><img id="RA"src="img/Practicas.png" alt="logoRA"width="70" height="70"><!--Ruta a la Ambrosia--></div>
+        <nav class="nav nav1">
+            <ul>
+              <li><a href='DatosCliente.html'>Mis Datos</a></li>
+              <li><a href="MisReservas.html">Mis Reservas</a></li>
+              <li><a href="#" id="nombreUsuario">Hola</a></li> <!-- Este es el enlace donde se añadirá el nombre -->
+              <li><a id ="cerrarSesion">Cerrar Sesión</a></li>
+          </ul>
+          
+          
+          </nav>
+    </header>
+    <!-- Aquí se mostrarán los detalles del evento -->
+    <div id="detalleEvento">
+        <!-- Los detalles del evento se mostrarán aquí -->
+    </div>
+
+    <div id="formularioreserva">
+        <form id="reserva">
+            <label>Nº personas: </label>
+            <input type="number" name="cantidad" id="cantidad" placeholder="Nº personas" max="10" min="1" required />
+            <br>
+
+            <label>Observaciones</label>
+            <input type="text" name="observaciones" id="observaciones" placeholder="observaciones" />
+            <br>
+            <button type="submit" id="reservarEvento">Reservar</button>
+        </form>
+    </div>
+    <script src="scripts/cliente.js"></script>
+       <script>
+        // Función para obtener los datos de un evento desde el servidor
+        async function getUnEvento() {
+            try {
+                const idEvento = JSON.parse(localStorage.getItem('evento'));
+                const res = await fetch(`http://localhost:9003/evento/uno/${idEvento}`);
+                if (!res.ok) {
+                    throw new Error(`Error en la respuesta del evento: ${res.status}`);
+                }
+                const evento = await res.json();
+                console.log("Datos obtenidos del evento:", evento);
+                return evento;
+            } catch (error) {
+                console.error("Error al obtener el evento:", error.message);
+                throw error;
+            }
+        }
+
+        // Función para obtener los datos de un usuario desde el servidor
+        async function getUnUsuario() {
+            try {
+                const idUser = JSON.parse(localStorage.getItem('usuario')).idUsuario;
+                const res = await fetch(`http://localhost:9003/usuario/uno/${idUser}`);
+                if (!res.ok) {
+                    throw new Error(`Error en la respuesta del usuario: ${res.status}`);
+                }
+                const usuario = await res.json();
+                console.log("Datos obtenidos del usuario:", usuario);
+                return usuario;
+            } catch (error) {
+                console.error("Error al obtener el usuario:", error.message);
+                throw error;
+            }
+        }
+
+        // Función para mostrar los detalles del evento en un div
+        function mostrarDatosEvento(evento) {
+            const divDetalles = document.getElementById('detalleEvento');  // Contenedor donde mostrarás los detalles
+
+            // Aquí agregamos el contenido del evento directamente en el div
+            divDetalles.innerHTML = `
+                <h2>Detalles del Evento: ${evento.nombre}</h2>
+                <br>
+                <p><strong>Aforo Máximo:</strong> ${evento.aforoMaximo}</p>
+                <p><strong>Descripción:</strong> ${evento.descripcion || "Sin descripción disponible"}</p>
+                <p><strong>Fecha Inicio:</strong> ${evento.fechaInicio || "Sin fecha de inicio disponible"}</p>
+                <p><strong>Duración del Evento:</strong> ${evento.duracion} ${evento.unidadDuracion || "Sin duración"}</p>
+                <p><strong>Dirección:</strong> ${evento.direccion || "Sin dirección"}</p>
+                <p><strong>Precio:</strong> ${evento.precio || "Sin precio definido"}</p>
+            `;
+
+            // Hacer visible el div con los detalles
+            divDetalles.style.display = 'block';  // Asegúrate de que el div sea visible
+        }
+
+        // Función para inicializar los datos
+        async function inicializarDatos() {
+            try {
+                const evento = await getUnEvento();
+                const usuario = await getUnUsuario();
+
+                // Mostrar los detalles del evento automáticamente al cargar la página
+                mostrarDatosEvento(evento);  // Muestra los detalles del evento
+
+                // Procesar la reserva al enviar el formulario
+                document.getElementById('reserva').addEventListener('submit', async function (e) {
+                    e.preventDefault();
+
+                    const cantidad = parseInt(document.getElementById("cantidad").value);
+                    const observaciones = document.getElementById("observaciones").value;
+
+                    // Precio fijo de 28
+                    const precioUnitario = 28;
+                    const precioVenta = cantidad * precioUnitario;
+
+                    const nuevaReserva = {
+                        cantidad: cantidad,
+                        observaciones: observaciones,
+                        usuario: { idUsuario: usuario.idUsuario },
+                        evento: { idEvento: evento.idEvento },
+                        precioVenta: precioVenta
+                    };
+
+                    console.log("Enviando reserva:", nuevaReserva);
+
+                    try {
+                        const response = await fetch('http://localhost:9003/reserva/alta', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(nuevaReserva)
+                        });
+
+                        if (!response.ok) {
+                            let errorDetails = '';
+                            try {
+                                errorDetails = await response.json();
+                            } catch {
+                                errorDetails = 'No se pudo obtener detalle del error';
+                            }
+                            throw new Error('Error al crear la reserva: ' + JSON.stringify(errorDetails));
+                        }
+
+                        const reservaCreada = await response.json();
+                        console.log("Reserva creada con éxito:", reservaCreada);
+                        alert("Reserva realizada con éxito!");
+                        window.location.href = "MisReservas.html";
+
+                        document.getElementById("reserva").reset();
+                        document.getElementById('formularioreserva').style.display = "none";
+                    } catch (error) {
+                        console.error("Error al crear la reserva:", error.message);
+                        alert("Error al crear la reserva: " + error.message);
+                    }
+                });
+            } catch (error) {
+                console.error("Error al inicializar los datos:", error.message);
+            }
+        }
+
+        // Inicializar los datos al cargar la página
+        inicializarDatos();
+    </script>
+
+
+</body>
+</html>

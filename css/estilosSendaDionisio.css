@@ -1,0 +1,1001 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  background-color: #F9F4EF;;
+  line-height: 1.6;
+  font-family: "cinzel";
+}
+
+
+
+/* Leyes para cada contenedor */
+
+.Espacio-Contenedores {
+  height: 87.5vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  margin-top: 15vh;
+}
+
+
+.Espacio-Contenedores-2 {
+  height: 88vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+}
+
+.Espacio-Contenedores-3 {
+  height: 78vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+}
+
+
+.Espacio-Contenedores h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.diferenciar {
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 20px;
+  background-color: #750f3b;
+  color:#F9F4EF;
+  position: relative;
+  z-index: 2;
+}
+
+.Espacio-Contenedores p {
+  max-width: auto;
+  margin: 0 auto 40px;
+  font-size: 16px;
+}
+
+.Contenedor-orden {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+
+
+
+
+
+
+
+
+/* Todo el nav incluido el logo y las rutas */
+
+
+header {
+  background: #750f3b;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+
+header .logo {
+  font-weight: 800;
+  font-size: 24px;
+  color: #111;
+}
+
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+
+.nav1 ul {
+  list-style: none;
+  background:#750f3b;
+}
+
+.nav1 ul:before,
+.nav1 ul:after {
+  content: "";
+  display: table;
+}
+
+.nav1 ul:after {
+  clear: both;
+}
+
+.nav1 ul > li {
+  float: left;
+  position: relative;
+}
+
+.nav1 a {
+  display: block;
+  padding: 10px 17px;
+  line-height: 1.2em;
+  color:  #F9F4EF;
+  transition: color 0.7s ;
+}
+
+.nav1 a:hover {
+  text-decoration: none;
+  color:rgb(241, 208, 145);
+}
+
+.nav1 li ul {
+  position: absolute;
+  left: -9999em;
+  top: 36px;
+  z-index: 1;
+  background: wheat;
+}
+
+.nav1 li ul li {
+  width: 200px;
+}
+
+.nav1 ul > li:hover ul {
+  left: 0;
+}
+
+.nav1 li ul a {
+  border: none;
+}
+
+.nav1 li ul a:hover {
+  background: rgba(0, 0, 0, 0.097);
+}
+
+
+.icono-usuario a {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.icono-usuario #icono2 {
+opacity: 0;
+}
+
+.icono-usuario img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.icono-usuario a:hover #icono1 {
+  opacity: 0; 
+}
+
+.icono-usuario a:hover #icono2 {
+  opacity: 1; 
+}
+
+#logoRA{
+  position: relative;
+  top: 30px;
+}
+
+.icono-usuario a, .icono-registro a{
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.icono-usuario #icono2 {
+opacity: 0;
+}
+.icono-usuario img,  .icono-registro img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.icono-usuario a:hover #icono1 {
+  opacity: 0; 
+}
+
+.icono-usuario a:hover #icono2 {
+  opacity: 1;
+}
+
+#logoRA{
+  position: relative;
+  top: 30px;
+}
+
+
+
+
+
+
+/* la primera imagin y el cuadrado */
+
+.Principal {
+  position: relative;
+  height: 85vh;     
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #333;
+  background-attachment: fixed;
+}
+
+.Principal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.081);
+}
+
+.Principal-texto {
+  position: relative;
+  z-index: 1;
+  max-width: 450px;
+  padding: 2rem;
+  transform: translateY(145%);
+  background-color:  #F9F4EF;
+  border-radius: 10px;
+}
+
+.Principal-texto h1 {
+  font-size: 2rem;
+  color: #2e2e2e;
+  margin-bottom: 20px;
+  font-family: "Playfair Display";
+}
+
+
+.Principal-texto p {
+  font-size: 1rem;
+  color: #2e2e2e;
+  margin-bottom: 30px;
+  font-family: "Source Sans 3" ;
+}
+
+.Principal-texto a {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.Principal-texto a:hover {
+  background: #333;
+}
+
+
+
+
+
+
+
+
+
+/*Reservas Destacadas */
+
+:root {
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.pagina-content-P-reservas {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  font-family:'Rubik', sans-serif;
+  width: max-content;
+  margin: 155px auto;
+  
+}
+
+@media (min-width: 600px) {
+  .pagina-content-P-reservas {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .pagina-content-P-reservas {
+    display: grid;
+    grid-template-columns: repeat(3, 450px); 
+    width: 150px;
+    justify-content: center;                 
+    grid-gap: 1rem;
+    padding: 1rem;
+    
+  }
+  .card-P-reservas {
+    width: 300px;   
+    height: 350px;  
+  }
+}
+
+.card-P-reservas {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1),
+              0 2px 2px rgba(0,0,0,0.1),
+              0 4px 4px rgba(0,0,0,0.1),
+              0 8px 8px rgba(0,0,0,0.1),
+              0 16px 16px rgba(0,0,0,0.1);
+  height: 370px;
+}
+
+.card-P-reservas:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+
+.card-P-reservas:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0) 0%,
+      hsla(0, 0%, 0%, 0.790) 100%
+  );
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+
+
+
+
+.card-P-reservas:nth-child(1):before {
+  background-image: url(https://s10.s3c.es/imag/_v0/2121x1193/b/8/4/Mejores-vinos-menos-15-euros.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.card-P-reservas:nth-child(2):before {
+  background-image: url(https://cdn.vinissimus.com/img/unsafe/keep/plain/local:///landings/d4945841-b02c-4aa6-9a17-cad5b2873eb2/700airam_296473d0.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card-P-reservas:nth-child(3):before {
+  background-image: url(https://licoreriasunidas.pe/cdn/shop/articles/tipos-de-vinos.jpg?v=1693249338);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.content-P-reservas {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+
+.ElTitulo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.P-reseña_Descrip {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.btn-P-Reseñas {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+@media (hover: hover) and (min-width: 600px) {
+  .card-P-reservas:after {
+      transform: translateY(0);
+  }
+
+  .content-P-reservas {
+      transform: translateY(calc(100% - 4.5rem));
+  }
+
+  .card-P-reservas:hover,
+  .card-P-reservas:focus-within {
+      align-items: center;
+  }
+
+  .card-P-reservas:hover:before {
+      transform: translateY(-4%);
+  }
+
+  .card-P-reservas:hover:after {
+      transform: translateY(-50%);
+  }
+
+  .card-P-reservas:hover .content-P-reservas {
+      transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Todas las reseñas de la pagina */
+
+
+.container {
+  padding: 16px; 
+  display: grid;
+  gap: 16px; 
+  grid-template-columns: repeat(5, 270px);
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+}
+
+
+.flat {
+  box-shadow: none !important;
+}
+
+.card {
+  overflow: hidden;
+  color: lightgray; 
+  font-size: 18px;
+  height: 245px; 
+  border: 1px solid darkgray; 
+  transition: all 1.3s cubic-bezier(1, 0, 0, 1);
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 0.8s;
+  
+}
+
+
+.card:hover {
+  box-shadow: 0 1px 26px lightgray; 
+}
+
+.card-Cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;     
+  padding: 1.5rem; 
+  background-color: rgba(0, 0, 0, 0.37); 
+  
+
+}
+
+.card-Titulo {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-family: "Source Sans 3" ;
+}
+
+
+.card-descripcion {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;   
+  height: 100%;
+  padding: 0;      
+  box-sizing: border-box;
+  color: white;
+  font-family: "Source Sans 3" ;
+}
+
+
+.subContenedor {
+  margin: 0;
+  min-height: 1.5em;
+  font-size: 25px;
+}
+
+
+.total-card {
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 60vw !important;
+  height: 70vh !important;
+  font-size: 26px;
+  box-shadow: 0 1px 26px lightgray; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+  z-index: 999;
+}
+
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 54px;
+  color: whitesmoke; 
+  cursor: pointer;
+  z-index: 1000;
+  transition: color 0.5s ease; 
+}
+
+
+.close-button:hover {
+  color: #750f3b;
+}
+
+
+.total-card .card-descripcion {
+  display: flex;
+}
+
+
+.btn-todas-Reseñas {
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: 1.5rem;      
+  align-self: center;       
+  padding: 1rem 2rem;       
+  font-size: 1rem;            
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 4px;         
+  transition: transform 0.2s;
+}
+
+.btn-todas-Reseñas:hover {
+  transform: scale(1.05);
+}
+
+
+.total-card .btn-todas-Reseñas {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Todo para cambiar las Sendas */
+
+.pagina-contenido-Senda {
+  display: grid;
+  grid-gap: 2rem;
+  padding: 100px;
+  max-width: 100%;
+  margin: 0 ;
+  font-family: var(--font-sans);
+}
+
+@media (min-width: 600px) {
+  .pagina-contenido-Senda {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .pagina-contenido-Senda {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card-t-Senda {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 1rem;
+  width: 90%;
+  text-align: center;
+  color: whitesmoke;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1),
+              0 2px 2px rgba(0,0,0,0.1),
+              0 4px 4px rgba(0,0,0,0.1),
+              0 8px 8px rgba(0,0,0,0.1),
+              0 16px 16px rgba(0,0,0,0.1);
+  height: 350px;
+}
+
+.card-t-Senda:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-size: cover;
+  background-position: 0 0;
+  transition: transform calc(var(--d) * 1.5) var(--e);
+  pointer-events: none;
+}
+
+.card-t-Senda:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  pointer-events: none;
+  background-image: linear-gradient(
+      to bottom,
+      hsla(0, 0%, 0%, 0) 0%,
+      hsla(0, 0%, 0%, 0.467) 100%
+  );
+  transform: translateY(-50%);
+  transition: transform calc(var(--d) * 2) var(--e);
+}
+
+.card-t-Senda:nth-child(1):before {
+  background-image: url(https://cdn.palbincdn.com/users/36776/images/1-1610009759.jpg);
+}
+.card-t-Senda:nth-child(2):before {
+  background-image: url(https://hips.hearstapps.com/hmg-prod/images/bodegas-enoturismo-vino-vendimia-1538589949.jpg);
+}
+.card-t-Senda:nth-child(3):before {
+  background-image: url(https://cdn0.bodas.net/article/7631/3_2/960/jpg/1367-cocteles-apertura.jpeg);
+}
+
+.contenido-Senda {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 5rem;
+  transition: transform var(--d) var(--e);
+  z-index: 1;
+}
+
+
+.Titulo-Senda {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.descripcion-Senda {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.btn-T-Sendas {
+  cursor: pointer;
+  margin-top: 1.5rem;
+  padding: 0.95rem 1.9rem;
+  font-size: 0.8s5rem;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  border: none;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* El footer de la Pagina */
+footer {
+  background: #750f3b;
+  color: #F9F4EF;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+
+
+
+
+
+
+.videoFondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.Espacio-Contenedores {
+  position: relative; 
+  overflow: hidden;  
+  z-index: 1;
+}
+
+.pagina-content-SubPagina,
+.Espacio-Contenedores > h2 {
+  position: relative;
+  z-index: 2; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#login-popup, #login-popup2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* se muestra con JS */
+  z-index: 1050;  /* Mayor que otros elementos */
+}
+
+#popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;  /* Aseguramos que esté por debajo de los pop-ups pero por encima de otros elementos */
+  display: none; /* Ocultar por defecto */
+}
+
+#popup-content1, #popup-content2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #750f3b;
+  padding: 40px;
+  border-radius: 10px;
+  z-index: 1050; /* Asegura que el contenido del pop-up esté al frente */
+  width: 500px;
+  height: auto; /* Dejar que la altura dependa del contenido */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+#popup-content1 h2,#popup-content2 h2 {
+    margin-bottom: 20px; /* Añadir espacio debajo del título */
+}
+#popup-content2 #email{
+
+  width: 420px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#popup-content2 button{
+  background-color:wheat;  /* Rojo vino */
+  color: rgb(0, 0, 0);
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+button#entrar-btn {
+    background-color:wheat;  /* Rojo vino */
+    color: rgb(0, 0, 0);
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#entrar-btn:hover {
+    background-color: rgb(176, 158, 125);  /* Rojo más oscuro al pasar el ratón */
+}
+
+/* Estilo para la 'X' de cierre */
+#popup-close, #popup-close2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
